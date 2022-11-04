@@ -86,7 +86,7 @@ ALTER SEQUENCE public.galaxy_id_seq OWNED BY public.galaxy.galaxy_id;
 
 CREATE TABLE public.galaxy_type (
     galaxy_type_id integer NOT NULL,
-    type character varying(30)
+    name character varying(30)
 );
 
 
