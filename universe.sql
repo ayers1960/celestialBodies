@@ -158,7 +158,7 @@ ALTER SEQUENCE public.moon_id_seq OWNED BY public.moon.moon_id;
 --
 
 CREATE TABLE public.planet (
-    plant_id integer NOT NULL,
+    planet_id integer NOT NULL,
     name character varying(30) NOT NULL,
     orderfromstar integer,
     dwarf boolean,
@@ -189,7 +189,7 @@ ALTER TABLE public.planet_id_seq OWNER TO freecodecamp;
 -- Name: planet_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: freecodecamp
 --
 
-ALTER SEQUENCE public.planet_id_seq OWNED BY public.planet.plant_id;
+ALTER SEQUENCE public.planet_id_seq OWNED BY public.planet.planet_id;
 
 
 --
@@ -251,10 +251,10 @@ ALTER TABLE ONLY public.moon ALTER COLUMN moon_id SET DEFAULT nextval('public.mo
 
 
 --
--- Name: planet plant_id; Type: DEFAULT; Schema: public; Owner: freecodecamp
+-- Name: planet planet_id; Type: DEFAULT; Schema: public; Owner: freecodecamp
 --
 
-ALTER TABLE ONLY public.planet ALTER COLUMN plant_id SET DEFAULT nextval('public.planet_id_seq'::regclass);
+ALTER TABLE ONLY public.planet ALTER COLUMN planet_id SET DEFAULT nextval('public.planet_id_seq'::regclass);
 
 
 --
@@ -441,7 +441,7 @@ ALTER TABLE ONLY public.planet
 --
 
 ALTER TABLE ONLY public.planet
-    ADD CONSTRAINT planet_pkey PRIMARY KEY (plant_id);
+    ADD CONSTRAINT planet_pkey PRIMARY KEY (planet_id);
 
 
 --
@@ -481,7 +481,7 @@ ALTER TABLE ONLY public.galaxy
 --
 
 ALTER TABLE ONLY public.moon
-    ADD CONSTRAINT plant FOREIGN KEY (planet_id) REFERENCES public.planet(plant_id);
+    ADD CONSTRAINT plant FOREIGN KEY (planet_id) REFERENCES public.planet(planet_id);
 
 
 --
